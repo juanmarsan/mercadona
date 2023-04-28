@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { ReviewProductsComponent } from './Components/review-products/review-products.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './Modules/material.module';
+import { ShowProductsComponent } from './Components/show-products/show-products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReviewProductsComponent
+    ReviewProductsComponent,
+    ShowProductsComponent
   ],
   imports: [
     BrowserModule,
