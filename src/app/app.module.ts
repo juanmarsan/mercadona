@@ -7,12 +7,14 @@ import { ReviewProductsComponent } from './Components/review-products/review-pro
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './Modules/material.module';
 import { ShowProductsComponent } from './Components/show-products/show-products.component';
+import { HomeComponent } from './Components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ReviewProductsComponent,
-    ShowProductsComponent
+    ShowProductsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
