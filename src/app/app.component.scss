@@ -1,7 +1,11 @@
 :root {
-    --mercadona: #229E6B;
-  }
+  --mercadona: #a2f3d1;
+  --mercadona: #fa0808;
+}
 
 .btn{
-    color: var(--mercadona);
+  color: var(--mercadona);
+}
+.btnDanger{
+  color: var(--mercadonaDanger);
 }

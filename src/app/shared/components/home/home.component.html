@@ -1,0 +1,25 @@
+<p>home works!</p>
+<div class="content border">
+    <div class="header">
+        <div class="img">
+            <img src = "./../../../assets/logo/mercadona-logo.svg" alt="My Happy SVG"/>
+        </div>
+        <div class="sesion"> 
+            <button *ngIf="!accede" class="btn" mat-raised-button (click)="sessionStart()">
+                Iniciar Sesión
+            </button>
+            <button *ngIf="accede" class="btn" mat-raised-button (click)="sessionStop()">
+                Cerrar Sesión
+            </button>
+        </div>
+    </div>
+    <div class="body borderGreen size">
+         <app-review-products></app-review-products>
+        <!-- <app-show-products></app-show-products> -->
+    </div>
+    <div class="footer">
+        <button class="btn" mat-raised-button (click)="openDialog()">
+            Añadir Producto
+        </button>
+    </div>
+</div>

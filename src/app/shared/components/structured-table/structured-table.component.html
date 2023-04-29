@@ -1,0 +1,18 @@
+<p>structured-table works!</p>
+
+
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+  <div class="example-box" *ngFor="let col of data" cdkDrag>{{col}}</div>
+</div>
+
+<div class="footer">
+      
+  <button class="btnDanger left" mat-raised-button (click)="close()">
+      Cancelar
+  </button>
+
+  
+  <button class="btn right" mat-raised-button (click)="apply()">
+      Aplicar
+  </button>
+</div>

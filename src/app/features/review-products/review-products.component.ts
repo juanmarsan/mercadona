@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from 'src/app/Services/products.service';
+import { ProductsService } from 'src/app/Core/Services/products.service';
 
 @Component({
   selector: 'app-review-products',
@@ -18,8 +18,12 @@ export class ReviewProductsComponent implements OnInit {
 
 
   getProductsReview(){ 
+    console.log("entra");
+    
     this.produtsService.getProductsToReview()
-    .subscribe((element: any)=> {  
+    .subscribe((element: any)=> {
+      console.log(element);
+        
       this.productsToReview = element;
     });
 }
