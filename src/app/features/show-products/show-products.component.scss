@@ -2,8 +2,25 @@ table {
     width: 100%;
 }
 
-.container{
-    height: 100%;
+
+.bordes{
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    border-bottom: solid 1px black;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 550px;
+  }
+
+
+
+.tableSpaced{
+    padding: 1rem;
 }
 
 #div1 {
@@ -18,8 +35,14 @@ th.mat-header-cell {
 }
 
 .footer{
-    padding: 0.5rem;
     text-align: right;
     position: sticky;
     bottom: 0;
+    width: 100%;
+    border-top: solid 1px var(--mercadona);
+}
+
+.right{
+    float: right;
+    margin: 0.5rem;
 }

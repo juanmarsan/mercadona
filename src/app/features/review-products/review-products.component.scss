@@ -1,3 +1,4 @@
+@import "./../../shared/scss/var.scss";
 .center{
         display: flex;
         justify-content: center;
@@ -15,5 +16,5 @@
 .bordes{
     border-left: solid 1px black;
     border-right: solid 1px black;
-    border-bottom: solid 1px black;
+    border-bottom: solid 1px var(--black);
 }

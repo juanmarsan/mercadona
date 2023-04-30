@@ -1,11 +1,12 @@
-:root {
-  --mercadona: #a2f3d1;
-  --mercadona: #fa0808;
-}
+
 
 .btn{
   color: var(--mercadona);
 }
 .btnDanger{
   color: var(--mercadonaDanger);
+}
+
+.pading{
+  padding: 5rem;
 }
