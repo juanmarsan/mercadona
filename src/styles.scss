@@ -1,4 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --black: rgb(0, 0, 0);
+    --mercadona: #229E6B;
+    --mercadonaDanger: #fa0808;
+}
+
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
