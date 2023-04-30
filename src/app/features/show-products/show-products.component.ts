@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ProductsService } from 'src/app/Core/Services/products.service';
 import { StructuredTableComponent } from 'src/app/shared/components/structured-table/structured-table.component';
+import { AddProductsComponent } from '../add-products/add-products.component';
 
 @Component({
   selector: 'app-show-products',
@@ -51,9 +52,21 @@ export class ShowProductsComponent implements OnInit {
         console.log(element);
         
       })
+  }
 
 
+  openDialog() {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(AddProductsComponent, dialogConfig)
+    .afterClosed().subscribe(element => {
+      console.log(element);
+      this.refresh();
       
+    });
   }
 
 }

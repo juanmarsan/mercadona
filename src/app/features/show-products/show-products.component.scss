@@ -2,6 +2,10 @@ table {
     width: 100%;
 }
 
+.container{
+    height: 100%;
+}
+
 #div1 {
     overflow-y:scroll;
     height:320px;
@@ -11,4 +15,11 @@ th.mat-header-cell {
     position: sticky;
     top: 0;
     background-color: white;
+}
+
+.footer{
+    padding: 0.5rem;
+    text-align: right;
+    position: sticky;
+    bottom: 0;
 }

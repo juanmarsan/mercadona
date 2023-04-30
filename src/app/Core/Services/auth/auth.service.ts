@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,13 +20,24 @@ export class AuthService {
   login(user: any): boolean {
     if (user.userName !== '' && user.password !== '' ) {     
       this.loggedIn.next(true);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/review']);
+      console.log("entr");
+      
     }
     return false
   }
 
   logout() {
     this.loggedIn.next(false);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/review']);
+  }
+
+  isLoged(): boolean{
+    let loged: boolean = false;
+    //return this.isLoggedIn;
+    this.isLoggedIn.subscribe((e: any)=>{
+      loged = e;
+    });
+    return loged;
   }
 }

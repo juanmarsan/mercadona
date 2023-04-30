@@ -10,10 +10,16 @@ import { ProductsService } from 'src/app/Core/Services/products.service';
 })
 export class AddProductsComponent implements OnInit {
 
-  valor: number = 0.1;
+  valor: string = '0.1';
   valorSumar: number = 0.1;
 
-  form!: FormGroup;
+  form = this.fb.group({
+    name: ['', Validators.required ],
+    marca: ['', Validators.required],
+    formato: ['', Validators.required],
+    precio: ['0.1'],
+  });
+
 
   constructor(private productsService: ProductsService,
     private dialogRef: MatDialogRef<any>,private fb: FormBuilder) { }
@@ -27,12 +33,6 @@ export class AddProductsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.form = this.fb.group({
-      name: ['', Validators.required ],
-      marca: ['', Validators.required],
-      formato: ['', Validators.required],
-      precio: [this.valor, Validators.required],
-   });
   }
 
   onSubmit(): void{
@@ -52,11 +52,11 @@ export class AddProductsComponent implements OnInit {
   
 
   sumar(){
-    this.valor = this.valor + this.valorSumar;
+    this.valor = (Number(this.valor) + this.valorSumar).toString();
   }
 
   restar(){
-    this.valor > 0 ? this.valor = this.valor - this.valorSumar : this.valor = 0;
+    Number(this.valor) > 0 ? this.valor = (Number(this.valor) - this.valorSumar).toString() : this.valor = '0';
   }
 
   add(){

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductsService } from 'src/app/Core/Services/products.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class ReviewProductsComponent implements OnInit {
 
   productsToReview: any;
 
-  constructor(private produtsService: ProductsService) { }
+  constructor(private produtsService: ProductsService, private router: Router) { }
 
   ngOnInit(): void {
     this.getProductsReview();
@@ -18,13 +19,15 @@ export class ReviewProductsComponent implements OnInit {
 
 
   getProductsReview(){ 
-    console.log("entra");
-    
     this.produtsService.getProductsToReview()
     .subscribe((element: any)=> {
-      console.log(element);
-        
       this.productsToReview = element;
     });
-}
+  }
+   
+  showProducts(){
+    console.log("PASA");
+    
+    this.router.navigate(['/products']);
+  }
 }

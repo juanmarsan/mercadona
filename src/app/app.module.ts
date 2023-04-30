@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ReviewProductsComponent } from './features/review-products/review-products.component';
 import { MaterialModule } from './Core/Modules/material.module';
 import { ShowProductsComponent } from './features/show-products/show-products.component';
-import { HomeComponent } from './shared/components/home/home.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 import { AddProductsComponent } from './features/add-products/add-products.component';
 import { StructuredTableComponent } from './shared/components/structured-table/structured-table.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +18,7 @@ import { AuthGuard } from './Core/Services/auth/auth.guard';
     AppComponent,
     ReviewProductsComponent,
     ShowProductsComponent,
-    HomeComponent,
+    HeaderComponent,
     AddProductsComponent,
     StructuredTableComponent
   ],
