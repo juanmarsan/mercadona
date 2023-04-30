@@ -1,9 +1,9 @@
 <app-header></app-header>
 <div class=" espacio center bordes">
-    <mat-card *ngFor="let product of productsToReview" class="sizeCard">
+    <mat-card class="sizeCard">
         <mat-card-header>
-            <mat-card-title>{{product.name}}</mat-card-title>
-            <mat-card-subtitle>{{product.units}} por revisar</mat-card-subtitle>
+            <mat-card-title>Tornillos</mat-card-title>
+            <mat-card-subtitle>{{productsToReview}} por revisar</mat-card-subtitle>
         </mat-card-header>
         <mat-card-actions class="center">
             <button mat-raised-button (click)="showProducts()">

@@ -10,14 +10,14 @@ import { ProductsService } from 'src/app/Core/Services/products.service';
 })
 export class AddProductsComponent implements OnInit {
 
-  valor: string = '0.1';
+  valor: number = 0.1;
   valorSumar: number = 0.1;
 
   form = this.fb.group({
     name: ['', Validators.required ],
     marca: ['', Validators.required],
     formato: ['', Validators.required],
-    precio: ['0.1'],
+    precio: [0.1],
   });
 
 
@@ -36,15 +36,15 @@ export class AddProductsComponent implements OnInit {
   }
 
   onSubmit(): void{
-    console.log("ENTRAAAA", this.form.value);
-
+    console.log("submit", this.form.value);
+    
     let element =
       {
         "id": -1,
         "nombre": this.form.value.name,
         "precio": this.form.value.precio,
         "formato": this.form.value.formato,
-        "marca": this.form.value.marca
+        "marca": this.form.value.marca,
       }
     this.productsService.addProduct(element);
     this.dialogRef.close(true);
@@ -52,24 +52,20 @@ export class AddProductsComponent implements OnInit {
   
 
   sumar(){
-    this.valor = (Number(this.valor) + this.valorSumar).toString();
+    console.log("form", this.form);
+    
+    this.valor = this.valor + this.valorSumar;
+    this.form.value.precio = this.form.value.precio + this.valorSumar;
   }
 
   restar(){
-    Number(this.valor) > 0 ? this.valor = (Number(this.valor) - this.valorSumar).toString() : this.valor = '0';
+   this.valor > this.valorSumar ? this.valor = this.valor - this.valorSumar : this.valor = 0;
   }
 
-  add(){
-    // let element =
-    //   {
-    //     "id": -1,
-    //     "nombre": "Addddd",
-    //     "precio": 12.99,
-    //     "formato": "Plato",
-    //     "marca": "Cocina"
-    //   }
-    // this.productsService.addProduct(element);
-    // this.dialogRef.close(true);
+  carga(){
+    console.log("jbjkhjhbjhbvjhbjh");
+    
+    this.form.value.precio = this.valor;
   }
   
   close() {

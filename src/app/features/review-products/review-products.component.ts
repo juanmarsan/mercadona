@@ -9,7 +9,7 @@ import { ProductsService } from 'src/app/Core/Services/products.service';
 })
 export class ReviewProductsComponent implements OnInit {
 
-  productsToReview: any;
+  productsToReview: number = 0;
 
   constructor(private produtsService: ProductsService, private router: Router) { }
 
@@ -18,16 +18,14 @@ export class ReviewProductsComponent implements OnInit {
   }
 
 
-  getProductsReview(){ 
-    this.produtsService.getProductsToReview()
+  async getProductsReview(){ 
+    await this.produtsService.getProducts()
     .subscribe((element: any)=> {
-      this.productsToReview = element;
+      this.productsToReview = element.length;
     });
   }
    
   showProducts(){
-    console.log("PASA");
-    
     this.router.navigate(['/products']);
   }
 }

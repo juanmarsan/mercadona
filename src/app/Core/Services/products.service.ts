@@ -14,10 +14,6 @@ export class ProductsService {
   private nextId = 0;
   constructor() { }
 
-
-  getProductsToReview(): Observable<any[]> {
-    return  of([{name: 'Tornillos', units: 100}]);
-  }
   getProducts(): Observable<any[]> {
     return  this.products;
   }
