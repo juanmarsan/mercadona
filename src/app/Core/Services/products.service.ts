@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import * as datos from 'src/app/shared/data/datos.json'
+import { iProductos } from '../Models/Interfaces/iProductos';
 
 @Injectable({
   providedIn: 'root'
@@ -10,19 +11,15 @@ export class ProductsService {
   private prod = new BehaviorSubject((datos as any).products);
   products = this.prod.asObservable();
 
-  //private todos: any[] = [];
-  private nextId = 0;
   constructor() { }
 
-  getProducts(): Observable<any[]> {
+  getProducts(): Observable<iProductos[]> {
     return  this.products;
   }
 
 
-  addProduct(item: any) {
-    item.id = (this.arrayProducts[this.arrayProducts.length -1].id) +1;
-    console.log(item, ++this.nextId);
-    
+  addProduct(item: iProductos) {
+    item.id = (this.arrayProducts[this.arrayProducts.length -1].id) +1;  
     this.arrayProducts.push(item);
     this.prod.next(Object.assign([], this.arrayProducts));
   }

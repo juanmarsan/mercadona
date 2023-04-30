@@ -5,6 +5,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ProductsService } from 'src/app/Core/Services/products.service';
 import { StructuredTableComponent } from 'src/app/shared/components/structured-table/structured-table.component';
 import { AddProductsComponent } from '../add-products/add-products.component';
+import { iProductos } from 'src/app/Core/Models/Interfaces/iProductos';
 
 @Component({
   selector: 'app-show-products',
@@ -28,8 +29,7 @@ export class ShowProductsComponent implements OnInit {
   refresh() {
     
     this.produtsService.getProducts().subscribe(element=>{
-      this.dataSource = new MatTableDataSource<any>(element);
-      console.log(element)
+      this.dataSource = new MatTableDataSource<iProductos>(element);
     })
     this.dataSource.paginator = this.paginator;
   }
