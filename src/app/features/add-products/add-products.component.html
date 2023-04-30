@@ -2,17 +2,17 @@
     <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
         <h1>Nuevo Producto</h1>
         <div class="form-group">
-            <label>Name:</label>
+            <label>Producto:</label>
             <input matInput  class="form-control ancho border" formControlName="name" type="text">
         </div>
         <div class="seleccion ancho">
             <div class="anchoMitad">
             <label>Precio</label>
                 <div class="number-input ancho">
-                    <button type="button" (click)="restar()" class="minus"></button>
+                    <button type="button" (click)="restar()" class="minus arrows"></button>
                     <input class="quantity" min="0" name="quantity" step="0.1"  
                         [value]="valor" type="number" formControlName="precio" inputmode="decimal">
-                    <button type="button" (click)="sumar()" class="plus"></button>
+                    <button type="button" (click)="sumar()" class="plus arrows"></button>
                 </div>
             </div>
             
@@ -33,15 +33,15 @@
             <label>Marca:</label>
             <input matInput  class="form-control ancho border" formControlName="marca" type="text">
         </div>
-        <button type="button" class="btnDanger left" mat-raised-button (click)="close()">
-            Cancelar
-        </button>
-
-        
-        <button type="submit"
-            [disabled]="form.invalid" class="btn right" mat-raised-button (click)="carga()">
-            Guardar
-        </button>
+        <div class="pading">
+            <button type="button" class="btnDanger left" mat-raised-button (click)="close()">
+                Cancelar
+            </button>
+            <button type="submit"
+                [disabled]="form.invalid" class="btn right" mat-raised-button (click)="carga()">
+                Guardar
+            </button>
+        </div>
   </form>
 
 </div>

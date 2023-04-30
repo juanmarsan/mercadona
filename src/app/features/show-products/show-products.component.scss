@@ -2,6 +2,25 @@ table {
     width: 100%;
 }
 
+button{
+  background-color: var(--mercadona);
+  color: var(--white);
+}
+
+.configuration{
+  width: max-content;
+}
+
+.right{
+  float: right;
+  margin: 0.5rem;
+}
+
+.left{
+  float: left;
+  margin: 0.5rem;
+}
+
 
 .bordes{
     border-left: solid 1px var(--black);
@@ -67,7 +86,3 @@ th.mat-header-cell {
     border-top: solid 1px var(--mercadona);
 }
 
-.right{
-    float: right;
-    margin: 0.5rem;
-}

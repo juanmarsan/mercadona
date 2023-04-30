@@ -9,6 +9,22 @@
     height: 600px;
 }
 
+.header {  
+    padding: 2rem;
+    height: 50px;
+}
+
+.img {
+    float:left;
+}
+
+.sesion {
+    float:right;
+}
 
 
+button{
+    background-color: var(--sesion);
+    color: var(--white);
+  }
 

@@ -6,6 +6,21 @@
     padding: 1rem;
 }   
 
+
+button{
+  background-color: var(--mercadona);
+  color: var(--white);
+}
+
+.btnDanger{
+  background-color: var(--mercadonaDanger);
+  color: var(--white);
+}
+
+.arrows{
+  color: var(--black);
+}
+
 .size{
     height: 40%;
 }
@@ -18,7 +33,7 @@
     float: left;
 }
 
-.footer{
+.pading{
     margin-top: 1rem;;
 }
 

@@ -6,6 +6,7 @@ import { ProductsService } from 'src/app/Core/Services/products.service';
 import { StructuredTableComponent } from 'src/app/shared/components/structured-table/structured-table.component';
 import { AddProductsComponent } from '../add-products/add-products.component';
 import { iProductos } from 'src/app/Core/Models/Interfaces/iProductos';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-show-products',
@@ -18,7 +19,7 @@ export class ShowProductsComponent implements OnInit {
   
   dataSource: any;
 
-  constructor(private produtsService: ProductsService, private dialog: MatDialog) { }
+  constructor(private produtsService: ProductsService, private dialog: MatDialog, private location: Location) { }
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
   
@@ -67,6 +68,10 @@ export class ShowProductsComponent implements OnInit {
       this.refresh();
       
     });
+  }
+
+  goToBack() {
+    this.location.back();
   }
 
 }

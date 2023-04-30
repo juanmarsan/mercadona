@@ -15,8 +15,6 @@ export class HeaderComponent implements OnInit {
     accede:boolean = false;
 
   ngOnInit(): void {
-    console.log("START");
-    
     this.accede = this.authService.isLoged();
   }
   

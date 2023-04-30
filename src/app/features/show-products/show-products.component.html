@@ -1,7 +1,6 @@
 <app-header></app-header>
 <div class="container bordes">
-  <div  class="mat-elevation-z8 tableSpaced">
-    
+  <div  class="mat-elevation-z8 tableSpaced"> 
     <mat-icon (click)="configurar()">settings</mat-icon> 
     <div id="div1">
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" #tabla1
@@ -42,6 +41,10 @@
   </div>
 
   <div class="footer">
+    <button class="btn left" mat-raised-button (click)="goToBack()">
+        Inicio
+    </button>
+
       <button class="btn right" mat-raised-button (click)="openDialog()">
           Añadir Producto
       </button>
